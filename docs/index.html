@@ -7,6 +7,10 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <style type="text/css">
+        body{
+            background: #fff url(img/back.png) repeat-y;
+            background-size: 100%;
+        }
     @media only screen and (min-width: 730px){
         .maindiv{
             width: 50%;
@@ -18,32 +22,37 @@
         }
     }
     @media only screen and (min-width: 400px){
-        .steps{
-            float: left;
-        }
-        #gmailparam{
-            margin-left: 20%;
-        }
         #form-sign{
             display: inline-block;
         }
     }
-    @media only screen and (max-width: 399px){
-        .steps{
-            margin-bottom: 3%;
-        }
-    }
     #ap{
         display: none;
-        color:#105394;
-        text-decoration: underline;
-        margin-bottom: 2%;
-        font-family: 'Roboto', sans-serif;
+        color: #105394;
+        text-align: center;
+        margin-bottom: 1%;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom: 40px;
     }
     #copy-sign{
         display: none;
-        margin-top: 2%;
+        margin-top: 40px;
         text-align: left;
+        text-align: center;
+    }
+    #copy-sign a{
+        color: #105394;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: 'Montserrat', sans-serif;
+    }
+    #copy-sign span{
+        font-style: italic;
+        color: grey;
+        margin-top: 10px;
+        margin-bottom: 40px;
     }
     hr{
         display: block;
@@ -53,26 +62,17 @@
     margin: 1em 0;
     padding: 0; 
     }
-    .copy-msg{
-        
-        color: grey;
-        font-size: 16px;
-    }
-    .steps{
-        color:#105394;
-        font-size: 24px;
-        font-family: 'Roboto', sans-serif;
-    }   
     .sign{
         margin-top: 2%;
         
         text-align: center; 
     }
     .maindiv{
-        background-color: #e6e6e6;
-        text-align: center; 
+        margin-top: 60px;
+        text-align: center;
     }
     .bann{
+        margin-top: 40px;
       text-align: center;
          /* min-height: 100px;
         width: 55%;
@@ -97,16 +97,53 @@
     }
     #form-sign{
             text-align: left;
-        min-width: 33%;
+        min-width: 75%;
         margin-top: 2%;
     }
     input{
-        border-bottom: 2px solid #e75112;
+        border-bottom: 2px solid #2C506A !important;
         border-top: 0;
         border-left: 0;
         border-right: 0;
-        min-width: 90%;
-         height: 20px;
+        color: #000;
+        height: 50px;
+        background-color: #F9F9FA;
+        width: 97%;
+        font-size: 16px;
+        padding-left: 3%;
+    }
+    .rdbtn{
+        width: 50%;
+        float: left;
+    }
+    .rdbtn input{
+        width: 25px;
+        height: 15px;
+        display: inline-block;
+        opacity: 0;
+    }
+    .rdbtn label{
+            display: inline-block;
+    }
+    .rdbtn label:before{
+         vertical-align: middle;
+        content: '';
+        display: inline-block;
+         visibility: visible;
+         width: 16px;
+        height: 16px;
+        margin: 0px 10px 0px -31px;
+        text-align: center;
+        border: 3px solid #e75112;
+        border-radius: 50%;
+    }
+     #classic:checked + #classicl:before, #anime:checked + #animel:before {
+         content: '✔';
+         color:#fff;
+         background-color: #E75112;
+     }
+    input::placeholder{
+        color:#2C506A
     }
     input:focus, select:focus{
         outline: none;
@@ -122,31 +159,32 @@
     }
     .fs-grp{
         margin-bottom: 6%;
-        margin-left: 10%;
     }
     .fs-input{
         margin-top: 1%;
     }
     select{
-        min-width: 90%;
-    }
-    #btn-cp{
-        text-align: center;
-        margin-bottom: 5%;
+        height: 50px;
+        font-size: 16px;
+        width: 100%;
+        border-bottom: 2px solid #2C506A !important;
     }
     .fs-btn button, #btn-cp button{
+        border-bottom: 3px solid #A8390B;
+        background-color: #e75112;
+        color: #fff;
+        font-size: 14px;
+        font-family: 'Roboto-Bold', Helvetica, Arial, sans-serif;
+        padding: 10px 28px;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 6px;
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+    }
+        .fs-btn button:focus, #btn-cp button:focus{
         outline: none;
-        padding: 1.8% 7%;
-        color:#fff;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 18px ;
-        letter-spacing: 2px ;
-        font-weight: bold  ;
-        text-decoration: none ;
-        border: 0 !important;
-    -webkit-box-shadow: 0px 4px 14px 0px rgba(50, 50, 50, 0.42);
-    -moz-box-shadow:    0px 4px 14px 0px rgba(50, 50, 50, 0.42);
-    box-shadow:         0px 4px 14px 0px rgba(50, 50, 50, 0.42);
     }
     #btn-cp button{
         background-color:#e75112;
@@ -155,94 +193,21 @@
         background-color:#105394;
     }
     .fs-btn button{
+        margin-top: 40px;
         margin-bottom: 3%;
         background-color:#e75112;
     }
     .fs-btn button:hover{
-        background-color:#105394;
+        color: #fff;
+        background-color: #00B7D0;
+        border-bottom: 3px solid #04546B;
     }
     .fs-btn button:hover, #btn-cp button:hover{
         outline: none;
         cursor: pointer ;
         
     }
-    /* Style the Image Used to Trigger the Modal */
-    #gmailparam {
-        cursor: pointer;
-        text-align: center;
-        margin-top: -4%;
-        color:grey;
-        font-family: 'Roboto', sans-serif;
-    }
-    /* The Modal (background) */
-    .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        padding-top: 100px; /* Location of the box */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-    }
-    /* Modal Content (Image) */
-    .modal-content {
-        margin: auto;
-        display: block;
-        width: 80%;
-        max-width: 700px;
-    }
-    /* Caption of Modal Image (Image Text) - Same Width as the Image */
-    #caption {
-        margin: auto;
-        display: block;
-        width: 80%;
-        max-width: 700px;
-        text-align: center;
-        color: #ccc;
-        padding: 10px 0;
-        height: 150px;
-    }
-    /* Add Animation - Zoom in the Modal */
-    .modal-content, #caption { 
-        -webkit-animation-name: zoom;
-        -webkit-animation-duration: 0.6s;
-        animation-name: zoom;
-        animation-duration: 0.6s;
-    }
-    @-webkit-keyframes zoom {
-        from {-webkit-transform:scale(0)} 
-        to {-webkit-transform:scale(1)}
-    }
-    @keyframes zoom {
-        from {transform:scale(0)} 
-        to {transform:scale(1)}
-    }
-    /* The Close Button */
-    .close {
-        position: absolute;
-        top: 15px;
-        right: 35px;
-        color: #f1f1f1;
-        font-size: 40px;
-        font-weight: bold;
-        transition: 0.3s;
-    }
-    .close:hover,
-    .close:focus {
-        color: #bbb;
-        text-decoration: none;
-        cursor: pointer;
-    }
-    /* 100% Image Width on Smaller Screens */
-    @media only screen and (max-width: 700px){
-        .modal-content {
-            width: 100%;
-        }
-    }
+
     </style>
 
 
@@ -250,7 +215,8 @@
         function showInput() {
             document.getElementById('ap').style.display = 'block';
             document.getElementById('copy-sign').style.display = 'block';
-            var logo = "https://weare.sfeir.com/wp-content/uploads/2017/06/logo_sfeir_clean.png";
+            var logo = "img/sfeir_logo_classic.png";
+            var gif = "img/sfeir_logo_anime.gif";
             var ville ="";
             var e = document.getElementById("ville").value;
             if(e == "5"){
@@ -281,20 +247,12 @@
             '<table width="100%" cellpadding="0" cellspacing="0"><tr><td  align="left" valign="top" style="padding-right: 10px; "><a href="https://sfeir.com/" title="SFEIR"><img id="ls" alt="Logo" style=" padding: 0; border: 0;" /></a></td><td  width="100%" align="left" valign="top" style="padding: 2px 0 8px 0; font-family: Arial; font-size: 10px;line-height: 12px; color: grey; "><span style="color: #105394;font-weight: bold;">'+document.getElementById("prenom").value+' '+document.getElementById("nom").value+'</span> - <span style="color: #e75112;">'+document.getElementById("poste").value+'</span><br /><span>'+ville+'</span><br /><span style="font-family: Trebuchet MS, Sans-Serif;font-weight: bold;margin-top:  2px;"><a href="tel:'+document.getElementById("phone").value+'">'+document.getElementById("phone").value+'</a> - <a href="tel:'+document.getElementById("phone2").value+'">'+document.getElementById("phone2").value+'</a></span></td></tr></table>';
                 }
             }
-            document.getElementById("ls").src = logo;
-        }
-        function CopyToClipboard(containerid) {
-            if (document.selection) { 
-                var range = document.body.createTextRange();
-                range.moveToElementText(document.getElementById(containerid));
-                range.select().createTextRange();
-                document.execCommand("Copy"); 
-            } else if (window.getSelection) {
-                var range = document.createRange();
-                 range.selectNode(document.getElementById(containerid));
-                 window.getSelection().addRange(range);
-                 document.execCommand("Copy");
-                 alert("Signature copiée !") 
+            if(document.getElementById('anime').checked) {
+                document.getElementById("ls").src = gif;
+                document.getElementById("ls").style.width = '160px';
+                document.getElementById("ls").style.marginTop = '-25px';
+            }else{
+                document.getElementById("ls").src = logo;
             }
         }
             
@@ -307,46 +265,40 @@
 
       <form id="form-sign">
         <div class="fs-grp">
-            <label>Prénom</label>
             <div class="fs-input">
-                <input type="text" name="prenom" id="prenom">
+                <input type="text" name="prenom" id="prenom" placeholder="Prénom">
             </div>
         </div>
 
 
         <div class="fs-grp">
-            <label>Nom</label>
             <div class="fs-input">
-                <input type="text" name="message" id="nom">
+                <input type="text" name="message" id="nom" placeholder="Nom">
             </div>
         </div>
 
 
         <div class="fs-grp">
-            <label>Poste</label>
             <div class="fs-input">
-                <input type="text" name="poste" id="poste">
+                <input type="text" name="poste" id="poste" placeholder="Poste">
             </div>
         </div>
 
 
         <div class="fs-grp">
-            <label>Téléphone</label>
             <div class="fs-input">
-                <input type="text" name="phone" id="phone">
+                <input type="text" name="phone" id="phone" placeholder="Téléphone">
             </div>
         </div>
 
 
         <div class="fs-grp">
-            <label>Téléphone #2 (optionnel)</label>
             <div class="fs-input">
-                <input type="text" name="phone2" id="phone2">
+                <input type="text" name="phone2" id="phone2" placeholder="Téléphone #2 (optionnel)">
             </div>
         </div>
 
         <div class="fs-grp">
-          <label>Adresse</label>
             <div class="fs-input">
                 <select name="ville" id="ville">
                     <option value="1" selected="selected">Paris</option>
@@ -358,59 +310,34 @@
             </div>
         </div>
 
+          <div class="fs-grp">
+              <div class="rdbtn">
+                  <input type="radio" id="classic" name="logo" value="Classic" checked><label id="classicl" for="classic">Logo Classic</label>
+              </div>
+              <div class="rdbtn">
+                  <input type="radio" id="anime" name="logo" value="Anime"><label id="animel" for="anime">Logo Animé</label>
+              </div>
+
+          </div>
+
       </form>
 
     <div class="fs-btn">
         <button type="submit" onclick="showInput();">Générer</button>
     </div>
 
-      
-
  </div>
 
 <div class="sign">
-    <div id="ap"><hr>Aperçu de la signature :</div>
+    <div id="ap"><hr>Signature à copier :</div>
     <div id="signature"></div>
-    <div id="copy-sign"><hr style="margin-bottom: 4%;">
-        <div class="steps">Etape 1 : </div>
-        <div id="btn-cp"><button onclick="CopyToClipboard('signature')">Copier la signature</button></div>
-        <div class="steps">Etape 2 :</div>
-        <div id="btn-cp"><a href="https://mail.google.com/mail/u/0/#settings/general" target="_blank"><button>Coller la signature</button></a></div>
-        <div id="gmailparam">(pour gmail)<br />PARAMETRES > GENERAL > SIGNATURE</div>
+    <div id="copy-sign">
 
-
-
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-
-              <!-- The Close Button -->
-              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
-
-              <!-- Modal Content (The Image) -->
-              <img class="modal-content" id="imggmail">
-
-              <!-- Modal Caption (Image Text) -->
-              <div id="caption"></div>
-        </div>
-
-
+       <a href="https://mail.google.com/mail/u/0/#settings/general" target="_blank">COLLER LE RÉSULTAT L'ESPACE SIGNATURE DE GMAIL</a>
+        <br />
+        <span>clique ci-dessus ou rends-toi dans PARAMETRES > GENERAL > SIGNATURE</span>
+        <hr>
     </div>
-<script>
-    var modal = document.getElementById('myModal');
-            // Get the image and insert it inside the modal - use its "alt" text as a caption
-            
-            var modalImg = document.getElementById("imggmail");
-            var captionText = document.getElementById("caption");
-            document.getElementById('gmailparam').onclick = function(){
-                modal.style.display = "block";
-                modalImg.src = "https://weare.sfeir.com/wp-content/uploads/2017/06/signsfeir.jpg";
-                captionText.innerHTML = "PARAMETRES > GENERAL > SIGNATURE";
-            }
-            // When the user clicks on <span> (x), close the modal
-            document.getElementsByClassName("close")[0].onclick = function() { 
-              modal.style.display = "none";
-            }
-</script>
  </body>
 </div>
  </html>
