@@ -6,7 +6,7 @@ Formulaire de création "auto" de signature mail SFEIR à l'aide du:
 * Poste (possible de le laisser vide)
 * Téléphone
 * Téléphone #2 (champ optionnel/si besoin)
-* Adresse postale (liste des 4 agences qui génère l'adresse adéquat)
+* Adresse postale (liste des 5 agences qui génère l'adresse adéquat)
 
 Walkthrough:
 * remplir les champs
